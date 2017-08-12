@@ -1,0 +1,31 @@
+<div class="container">
+<h2 class="page-header">Chat Dashboard</h2>
+<p>Welcome to your dashboard! Feel free to chat it up!</p>
+</div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">Chat Window</div>
+          <div class="panel-body">
+            <div class="message-container" #scrollMe style="overflow: auto; height: 350px;">
+                <div class="row message-bubble" *ngFor="let chat of chats">
+                <p class="text-muted">{{chat.name}}</p>
+                    <p class=" chat-text">{{chat.message}}</p>
+                </div>
+            </div>
+            <div class="panel-footer">
+                 <div class="input-group">
+                     <br>
+                  <input type="text" class="form-control" [(ngModel)]="textInput" (keyup.enter)="sendMessage()" placeholder="Send a message...">
+                  <span class="input-group-btn"><br>
+                    <button class="btn btn-default" type="button" (click)="sendMessage()">Send</button>
+                  </span>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
